@@ -8,7 +8,7 @@ class Controller{
 
     async _GET(req, res){
     
-        const data = req.params.id ? 
+        const data = req.params.id >= 0 ? 
                     await this.model.selectById(req.params.id) :
                     await this.model.addWhere(req.query).select();
 
